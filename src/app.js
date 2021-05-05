@@ -8,7 +8,7 @@ const request = require('postman-request')
 // console.log(path.join(__dirname, '../public'))
 
 const app = express() //generate application
-// const port = process.env.PORT || 3000 //setting port number to the environment port for heroku
+const port = process.env.PORT || 3000 //setting port number to the environment port for heroku
 
 //Defining paths for Express config
 const publicDirectoryPath = path.join(__dirname, '../public')
@@ -133,8 +133,8 @@ app.get('*', (req, res) => {
 })
 
 //start server:
-app.listen(process.env.PORT || 3000 , () => {
-    console.log('Server is up on port ' + this.address().port)
+app.listen(port, () => {
+    console.log('Server is up on port ' + port)
 })
 
 
